@@ -1,3 +1,4 @@
+import Rating from "@/components/Rating";
 import getMovies from "@/lib/movie";
 
 export default async function Home() {
@@ -9,8 +10,9 @@ export default async function Home() {
         {movies.map(async (movie) => (
           <div key={movie.id} className="flex font-palanquin gap-3">
             <div>
-              {movie.name} ({movie.averageRating})
+              {movie.name} ({movie.averageRating.toFixed(2)})
             </div>
+            <Rating value={movie.averageRating.toFixed(2)} />
           </div>
         ))}
       </div>

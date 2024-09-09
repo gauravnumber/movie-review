@@ -1,3 +1,4 @@
+import '@smastrom/react-rating/style.css';
 import "./globals.css";
 
 export const metadata = {
