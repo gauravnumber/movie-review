@@ -1,17 +1,17 @@
-import prisma from "@/lib/db";
+import getMovies from "@/lib/movie";
 
 export default async function Home() {
-  const movies = await prisma.movie.findMany();
-  console.log("movies", movies);
+  const movies = await getMovies()
 
   return (
     <div>
       <div className="flex flex-col gap-4">
-        {movies.map((movie) => (
+        {movies.map(async (movie) => (
           <div key={movie.id} className="flex font-palanquin gap-3">
-            <div>{movie.name}</div>
+            <div>
+              {movie.name} ({movie.averageRating})
+            </div>
           </div>
-
         ))}
       </div>
     </div>
