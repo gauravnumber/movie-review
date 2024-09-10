@@ -4,7 +4,7 @@ const MovieCard = ({ movie }) => {
   return (
     <div
       key={movie.id}
-      className="flex items-center font-palanquin gap-3 bg-coral-red/10 p-4"
+      className="flex max-sm:flex-col items-center font-palanquin gap-3 bg-coral-red/10 p-4"
     >
       <div>
         {movie.name} ({movie.averageRating.toFixed(2)})
