@@ -23,3 +23,9 @@ model Rating {
   movieId String
   movie   Movie  @relation(fields: [movieId], references: [id])
 }
+
+model Url_lists {
+  id   String @id @default(cuid())
+  url  String
+  slug String @unique
+}
